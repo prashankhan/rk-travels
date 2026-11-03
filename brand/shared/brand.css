@@ -1,0 +1,11 @@
+/* Shared by the business card and social templates. Mirrors src/app/globals.css tokens. */
+@font-face { font-family: "Instrument Serif"; src: url("./instrument-serif-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-style: normal; }
+@font-face { font-family: "Instrument Serif"; src: url("./instrument-serif-latin-400-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; }
+@font-face { font-family: "Montserrat"; src: url("./montserrat-latin-wght-normal.woff2") format("woff2"); font-weight: 100 900; }
+@font-face { font-family: "Inter"; src: url("./inter-latin-wght-normal.woff2") format("woff2"); font-weight: 100 900; }
+:root {
+  --navy: #06274d; --golden-yellow: #ffc107; --sunset-orange: #ff8a00; --ocean-blue: #008fd3;
+  --warm-white: #fafaf7; --charcoal: #263445; --white: #ffffff; --muted: #5a6676; --border: #e4e7eb;
+  --font-display: "Instrument Serif", Georgia, serif; --font-heading: "Montserrat", Arial, sans-serif; --font-body: "Inter", Arial, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }

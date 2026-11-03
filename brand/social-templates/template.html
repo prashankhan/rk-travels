@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>R.K Travels — social template</title>
+<!--
+  EDITABLE SOURCE for the R.K Travels social kit.
+  Open with ?t=<template>&s=<size>[&photo=<image url>]
+    t: general | airport | rental | tours | announcement
+    s: square (1080×1080) | portrait (1080×1350) | story (1080×1920)
+  Edit copy in TEMPLATES below. Pass a real photograph with &photo=../path/to/photo.jpg;
+  without one, a labelled photo slot is shown. Export all with: node brand/social-templates/render.mjs
+  No offers, discounts or prices — only confirmed details.
+-->
+<link rel="stylesheet" href="../shared/brand.css">
+<style>
+  html, body { background: var(--white); }
+  .post { position: relative; overflow: hidden; background: var(--white); color: var(--charcoal); font-family: var(--font-body); display: flex; flex-direction: column; }
+  .square { width: 1080px; height: 1080px; --pad: 64px; --photo: 470px; --h: 66px; }
+  .portrait { width: 1080px; height: 1350px; --pad: 80px; --photo: 760px; --h: 84px; }
+  .story { width: 1080px; height: 1920px; --pad: 88px; --photo: 820px; --h: 104px; }
+  .story p.body { font-size: 36px; }
+  .story .btn { height: 92px; font-size: 32px; }
+  .story .loc { font-size: 26px; }
+
+  .photo { position: relative; height: var(--photo); margin: var(--pad) var(--pad) 0; border-radius: 24px; overflow: hidden; background: var(--warm-white); flex: none; }
+  .story .photo { margin-top: 250px; } /* keep clear of the story's top UI */
+  .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .slot { position: absolute; inset: 0; border: 3px dashed #c3c9d1; border-radius: 24px; display: flex; flex-direction: column; justify-content: flex-end; padding: 36px; color: var(--muted); font-size: 26px; line-height: 1.35; }
+  .slot b { font: 600 18px/1 var(--font-heading); letter-spacing: .14em; text-transform: uppercase; margin-bottom: 10px; }
+  .logo { position: absolute; top: calc(var(--pad) + 28px); left: calc(var(--pad) + 28px); background: var(--white); border-radius: 16px; padding: 14px 20px; box-shadow: 0 8px 24px rgba(6,39,77,.10); }
+  .logo img { height: 92px; display: block; }
+
+  .copy { flex: 1; display: flex; flex-direction: column; padding: 48px var(--pad) var(--pad); }
+  .story .copy { padding-bottom: 260px; } /* keep clear of the story's bottom UI */
+  .eyebrow { display: flex; align-items: center; gap: 18px; font: 600 22px/1 var(--font-heading); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .eyebrow::before { content: ""; width: 56px; height: 4px; background: var(--golden-yellow); }
+  h1 { margin-top: 22px; font: 400 var(--h)/1.02 var(--font-display); letter-spacing: -.01em; color: var(--navy); }
+  h1 em { font-style: italic; }
+  p.body { margin-top: 20px; max-width: 30ch; font-size: 30px; line-height: 1.4; color: var(--charcoal); }
+  .square p.body { font-size: 26px; margin-top: 14px; }
+  .square .copy { padding-top: 36px; }
+  .square h1 { margin-top: 16px; }
+  .square .btn { height: 70px; font-size: 26px; }
+  .cta { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-top: 28px; }
+  .btn { display: inline-flex; align-items: center; gap: 14px; height: 78px; padding: 0 34px; border-radius: 3px; background: var(--golden-yellow); color: var(--navy); font: 600 28px/1 var(--font-heading); letter-spacing: .01em; }
+  .btn svg { width: 32px; height: 32px; }
+  .loc { font: 500 22px/1.3 var(--font-body); color: var(--muted); text-align: right; }
+
+  /* Announcement: type-led, warm-white, no photo */
+  .announcement { background: var(--warm-white); }
+  .announcement .photo { display: none; }
+  .announcement .ann-logo { display: block; align-self: flex-start; width: auto; margin: var(--pad) var(--pad) 0; height: 150px; }
+  .story.announcement .ann-logo { margin-top: 250px; }
+  .announcement .copy { justify-content: center; }
+  .announcement h1 { font-size: calc(var(--h) * 1.35); max-width: 13ch; }
+  .announcement .cta { margin-top: 56px; justify-content: flex-start; flex-wrap: wrap; }
+  .ann-logo { display: none; }
+  .rule-bottom { position: absolute; left: 0; right: 0; bottom: 0; height: 14px; background: var(--navy); }
+  .rule-bottom::after { content: ""; position: absolute; left: var(--pad); top: 0; width: 120px; height: 14px; background: var(--golden-yellow); }
+</style>
+</head>
+<body>
+<div id="post" class="post"></div>
+<script>
+  const WA = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>';
+  const TEMPLATES = {
+    general: { eyebrow: "R.K Travels", title: "Your Journey, Our Priority.", body: "Airport transfers, vehicle rentals and tours across Sri Lanka.", cta: "Plan your journey", photo: "Scenic coastal road, Sri Lanka" },
+    airport: { eyebrow: "Airport transfers", title: "Arriving in Sri Lanka? <em>Arrange your pickup.</em>", body: "Send your flight details on WhatsApp and we will confirm your transfer.", cta: "WhatsApp us", photo: "Arrivals, Bandaranaike International Airport" },
+    rental: { eyebrow: "Vehicle rentals", title: "Explore at <em>your own pace.</em>", body: "Cars, vans, motorcycles and tuk-tuks. Message us with your dates.", cta: "Ask about a vehicle", photo: "Vehicle on a hill-country road" },
+    tours: { eyebrow: "Tours & experiences", title: "Discover Sri Lanka, <em>your way.</em>", body: "Tell us where you would like to go and we will help plan the journey.", cta: "Plan a tour", photo: "Sigiriya at first light" },
+    announcement: { eyebrow: "From R.K Travels", title: "Planning a trip? <em>Talk to us on WhatsApp.</em>", body: "Airport transfers, vehicle rentals and tours, arranged from Negombo.", cta: "WhatsApp us", photo: "" },
+  };
+  const q = new URLSearchParams(location.search);
+  const t = TEMPLATES[q.get("t")] ? q.get("t") : "general";
+  const s = ["square", "portrait", "story"].includes(q.get("s")) ? q.get("s") : "portrait";
+  const d = TEMPLATES[t];
+  const photo = q.get("photo");
+  const el = document.getElementById("post");
+  el.className = `post ${s} ${t === "announcement" ? "announcement" : ""}`;
+  el.innerHTML = `
+    <div class="photo">${photo ? `<img src="${photo}" alt="">` : `<div class="slot"><b>Photo</b>${d.photo}</div>`}
+      <div class="logo"><img src="../shared/rk-travels-logo-full-colour.png" alt="R.K Travels"></div></div>
+    <img class="ann-logo" src="../shared/rk-travels-logo-full-colour.png" alt="R.K Travels">
+    <div class="copy">
+      <p class="eyebrow">${d.eyebrow}</p>
+      <h1>${d.title}</h1>
+      <p class="body">${d.body}</p>
+      <div class="cta"><span class="btn">${WA}${d.cta}</span><span class="loc">+94 74 363 8418<br>Negombo, Sri Lanka</span></div>
+    </div>
+    <div class="rule-bottom"></div>`;
+</script>
+</body>
+</html>

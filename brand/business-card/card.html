@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>R.K Travels — business card (Shri, Founder)</title>
+<!--
+  EDITABLE SOURCE. Trim 90 × 50 mm, bleed 3 mm each side (artboard 96 × 56 mm), safe area 4 mm inside trim.
+  Open with ?side=front or ?side=back. Re-export with: node brand/business-card/render.mjs
+  Edit the text inside the .details block only. Do not alter the logo.
+-->
+<link rel="stylesheet" href="../shared/brand.css">
+<style>
+  @page { size: 96mm 56mm; margin: 0; }
+  html, body { width: 96mm; height: 56mm; background: var(--white); }
+  .art { position: relative; width: 96mm; height: 56mm; overflow: hidden; background: var(--white); }
+  /* Guides (hidden in exports unless ?guides=1) */
+  .guide { position: absolute; pointer-events: none; display: none; }
+  .show-guides .guide { display: block; }
+  .trim { left: 3mm; top: 3mm; width: 90mm; height: 50mm; outline: 0.1mm solid #e0007a; }
+  .safe { left: 7mm; top: 7mm; width: 82mm; height: 42mm; outline: 0.1mm dashed #00a3e0; }
+
+  /* FRONT — branded side */
+  .front { display: grid; place-items: center; }
+  .front .logo { width: 56mm; height: auto; display: block; margin-top: -2mm; }
+  .front .band { position: absolute; left: 0; right: 0; bottom: 0; height: 6mm; background: var(--navy); }  /* 3 mm visible after trim */
+  .front .band::after { content: ""; position: absolute; left: 50%; top: 0; transform: translateX(-50%); width: 14mm; height: 0.9mm; background: var(--golden-yellow); }
+  .front .line { position: absolute; left: 50%; bottom: 10.5mm; transform: translateX(-50%); font: 500 5.6pt/1 var(--font-body); letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+
+  /* BACK — personal contact side */
+  .back .accent { position: absolute; left: 0; top: 0; bottom: 0; width: 5.2mm; background: var(--navy); }   /* 2.2 mm visible */
+  .back .accent::after { content: ""; position: absolute; left: 0; right: 0; top: 13mm; height: 9mm; background: var(--golden-yellow); }
+  .back .details { position: absolute; left: 11mm; top: 9.5mm; right: 7mm; bottom: 7mm; display: flex; flex-direction: column; }
+  .back .name { font: 700 13pt/1.05 var(--font-heading); color: var(--navy); letter-spacing: -0.01em; }
+  .back .title { margin-top: 1.3mm; font: 500 7pt/1.2 var(--font-body); color: var(--charcoal); }
+  .back .company { margin-top: 0.6mm; font: 400 italic 8pt/1.2 var(--font-display); color: var(--muted); }
+  .back .rule { width: 9mm; height: 0.5mm; background: var(--golden-yellow); margin: 3.6mm 0 3.4mm; }
+  .back ul { list-style: none; display: flex; flex-direction: column; gap: 1.9mm; }
+  .back li { display: flex; align-items: center; gap: 2.2mm; font: 500 7.2pt/1 var(--font-body); color: var(--charcoal); }
+  .back li strong { font-weight: 600; color: var(--navy); }
+  .back li svg { width: 3.1mm; height: 3.1mm; flex: none; color: var(--navy); }
+  .back .mark { position: absolute; right: 7mm; bottom: 7mm; width: 11mm; height: 11mm; border-radius: 0.6mm; display: block; }
+</style>
+</head>
+<body>
+<section class="art front" id="front">
+  <img class="logo" src="../shared/rk-travels-logo-full-colour.png" alt="R.K Travels">
+  <p class="line">Airport transfers · Vehicle rentals · Tours</p>
+  <div class="band"></div>
+  <div class="guide trim"></div><div class="guide safe"></div>
+</section>
+
+<section class="art back" id="back">
+  <div class="accent"></div>
+  <div class="details">
+    <p class="name">Shri</p>
+    <p class="title">Founder</p>
+    <p class="company">R.K Travels</p>
+    <div class="rule"></div>
+    <ul>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span><strong>+94 74 363 8418</strong> · Phone &amp; WhatsApp</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Negombo, Sri Lanka</span></li>
+    </ul>
+  </div>
+  <img class="mark" src="../shared/rk-travels-favicon.png" alt="">
+  <div class="guide trim"></div><div class="guide safe"></div>
+</section>
+<script>
+  const q = new URLSearchParams(location.search);
+  if (q.get("guides") === "1") document.body.classList.add("show-guides");
+  const side = q.get("side");
+  if (side) document.querySelectorAll(".art").forEach((el) => { if (el.id !== side) el.remove(); });
+</script>
+</body>
+</html>

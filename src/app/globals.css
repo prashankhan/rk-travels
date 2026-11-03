@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   R.K Travels design tokens (mirrors the published design system).
+   Tailwind v4 turns these into utilities: bg-navy, font-display,
+   rounded-control, shadow-card, max-w-site, md:, lg: …
+   ------------------------------------------------------------------ */
+@theme {
+  /* Approved palette */
+  --color-navy: #06274d;
+  --color-golden-yellow: #ffc107;
+  --color-sunset-orange: #ff8a00;
+  --color-ocean-blue: #008fd3;
+  --color-warm-white: #fafaf7;
+  --color-charcoal: #263445;
+  --color-white: #ffffff;
+
+  /* Derived neutrals and states */
+  --color-muted: #5a6676;
+  --color-border: #e4e7eb;
+  --color-border-strong: #7c8794;
+  --color-navy-hover: #0a3a70;
+  --color-golden-yellow-hover: #e5ac00;
+  --color-yellow-tint: #fff4d1;
+  --color-disabled-bg: #eef0f2;
+  --color-error: #b4232c;
+  --color-error-tint: #fcedee;
+  --color-success: #1f6f43;
+  --color-success-tint: #eaf4ee;
+
+  /* Families (variables set by next/font in layout.tsx) */
+  --font-display: var(--font-instrument), Georgia, "Times New Roman", serif;
+  --font-heading: var(--font-montserrat), "Helvetica Neue", Arial, sans-serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Radii */
+  --radius-control: 2px;
+  --radius-sm: 4px;
+  --radius-menu: 8px;
+  --radius-card: 12px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(6, 39, 77, 0.06);
+  --shadow-card: 0 1px 2px rgba(6, 39, 77, 0.04), 0 8px 24px rgba(6, 39, 77, 0.06);
+  --shadow-card-hover: 0 2px 4px rgba(6, 39, 77, 0.05), 0 16px 40px rgba(6, 39, 77, 0.1);
+  --shadow-menu: 0 12px 32px rgba(6, 39, 77, 0.14);
+
+  /* Layout */
+  --container-site: 1240px;
+  --container-narrow: 760px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+
+  /* Motion */
+  --ease-brand: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --animate-fade-up: fade-up 600ms var(--ease-brand) both;
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: none; }
+  }
+}
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body {
+    background: var(--color-white);
+    color: var(--color-charcoal);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 26px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  :where(a, button, input, select, textarea, [tabindex]):focus-visible {
+    outline: 2px solid var(--color-navy);
+    outline-offset: 2px;
+  }
+  .on-dark :where(a, button):focus-visible { outline-color: var(--color-white); }
+  ::selection { background: var(--color-yellow-tint); color: var(--color-navy); }
+  [id] { scroll-margin-top: 96px; }
+}
+
+/* Type styles — names match the design system's tokens. */
+@layer components {
+  .type-display-hero { font-family: var(--font-display); font-weight: 400; font-size: clamp(3rem, 2rem + 4.2vw, 5rem); line-height: 1; letter-spacing: -0.01em; }
+  .type-display-lg { font-family: var(--font-display); font-weight: 400; font-size: clamp(2.5rem, 1.9rem + 2.4vw, 3.5rem); line-height: 1.07; letter-spacing: -0.01em; }
+  .type-display-md { font-family: var(--font-display); font-weight: 400; font-size: clamp(2.125rem, 1.8rem + 1.4vw, 2.75rem); line-height: 1.13; }
+  .type-display-sm { font-family: var(--font-display); font-weight: 400; font-size: 1.875rem; line-height: 1.14; }
+  .type-heading-1 { font-family: var(--font-heading); font-weight: 700; font-size: clamp(1.875rem, 1.5rem + 1.4vw, 2.5rem); line-height: 1.2; letter-spacing: -0.015em; }
+  .type-heading-2 { font-family: var(--font-heading); font-weight: 600; font-size: clamp(1.5rem, 1.3rem + 0.8vw, 1.875rem); line-height: 1.27; letter-spacing: -0.01em; }
+  .type-heading-3 { font-family: var(--font-heading); font-weight: 600; font-size: 1.375rem; line-height: 1.36; }
+  .type-heading-4 { font-family: var(--font-heading); font-weight: 600; font-size: 1.125rem; line-height: 1.44; }
+  .type-eyebrow { font-family: var(--font-heading); font-weight: 600; font-size: 0.75rem; line-height: 1rem; letter-spacing: 0.14em; text-transform: uppercase; }
+  .type-lead { font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.1875rem); line-height: 1.6; }
+  .type-body-sm { font-size: 0.875rem; line-height: 1.375rem; }
+  .type-caption { font-size: 0.8125rem; line-height: 1.125rem; }
+
+  .container-site { width: 100%; max-width: var(--container-site); margin-inline: auto; padding-inline: 16px; }
+  @media (min-width: 768px) { .container-site { padding-inline: 32px; } }
+  .section-y { padding-block: 64px; }
+  @media (min-width: 1024px) { .section-y { padding-block: 112px; } }
+
+  .rule-accent { display: inline-block; width: 32px; height: 2px; background: var(--color-golden-yellow); vertical-align: middle; }
+
+  .reveal { animation: var(--animate-fade-up); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
