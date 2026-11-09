@@ -18,6 +18,13 @@ export function isCurrent(pathname: string, href: string) {
   return href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
 }
 
+/** Parent nav groups stay inactive when a child also has its own top-level link (e.g. Tours). */
+function isGroupCurrent(pathname: string, href: string, items: { href: string }[]) {
+  if (isCurrent(pathname, href)) return true;
+  const topLevel = new Set(mainNav.map((item) => item.href));
+  return items.some((item) => !topLevel.has(item.href) && isCurrent(pathname, item.href));
+}
+
 export function SiteHeader() {
   const pathname = usePathname() ?? "/";
 
@@ -32,7 +39,7 @@ export function SiteHeader() {
               item.items ? (
                 <NavigationMenu.Item key={item.label} className="relative">
                   <NavigationMenu.Trigger
-                    className={cn(linkClass, "group cursor-pointer", item.items.some((i) => isCurrent(pathname, i.href)) || isCurrent(pathname, item.href) ? currentClass : "")}
+                    className={cn(linkClass, "group cursor-pointer", isGroupCurrent(pathname, item.href, item.items) && currentClass)}
                   >
                     {item.label}
                     <ChevronDown aria-hidden className="size-3.5 transition-transform duration-200 group-data-[state=open]:rotate-180" strokeWidth={1.75} />

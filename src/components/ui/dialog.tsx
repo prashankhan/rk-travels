@@ -12,7 +12,12 @@ export const DialogTitle = DialogPrimitive.Title;
 export const DialogDescription = DialogPrimitive.Description;
 
 export function DialogOverlay({ className, ...props }: React.ComponentProps<typeof DialogPrimitive.Overlay>) {
-  return <DialogPrimitive.Overlay className={cn("fixed inset-0 z-50 bg-navy/35", className)} {...props} />;
+  return (
+    <DialogPrimitive.Overlay
+      className={cn("fixed inset-0 z-50 bg-navy/45 backdrop-blur-[2px]", className)}
+      {...props}
+    />
+  );
 }
 
 export function DialogContent({

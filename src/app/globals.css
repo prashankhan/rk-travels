@@ -27,6 +27,8 @@
   --color-error-tint: #fcedee;
   --color-success: #1f6f43;
   --color-success-tint: #eaf4ee;
+  --color-whatsapp: #25d366;
+  --color-whatsapp-hover: #1ebe57;
 
   /* Families (variables set by next/font in layout.tsx) */
   --font-display: var(--font-instrument), Georgia, "Times New Roman", serif;

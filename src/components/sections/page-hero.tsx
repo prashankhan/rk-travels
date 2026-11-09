@@ -12,23 +12,35 @@ type Props = {
   className?: string;
 };
 
-/** Inner-page hero. A photograph fills the header; the contact page keeps a side panel instead. */
+/** Inner-page hero. A photograph fills the header when `image` is set; optional `aside` sits on the right. */
 export function PageHero({ eyebrow, title, intro, actions, image, aside, className }: Props) {
   if (image) {
     return (
-      <section className={cn("relative isolate flex min-h-[480px] items-end overflow-hidden bg-charcoal text-white md:min-h-[540px] lg:min-h-[600px]", className)}>
+      <section
+        className={cn(
+          "relative isolate flex min-h-[480px] items-end overflow-hidden bg-charcoal text-white md:min-h-[540px] lg:min-h-[600px]",
+          aside && "min-h-0 items-stretch md:min-h-[560px] lg:min-h-[640px]",
+          className,
+        )}
+      >
         <Photo image={image} sizes="100vw" priority tone="dark" />
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,rgba(6,39,77,0.82)_0%,rgba(6,39,77,0.62)_48%,rgba(6,39,77,0.28)_100%)] md:bg-[linear-gradient(100deg,rgba(6,39,77,0.78)_0%,rgba(6,39,77,0.62)_38%,rgba(6,39,77,0.22)_88%)]"
         />
-        <div className="on-dark relative container-site py-16 md:py-20 lg:py-24">
+        <div
+          className={cn(
+            "on-dark relative container-site py-16 md:py-20 lg:py-24",
+            aside && "flex w-full flex-col justify-end gap-10 lg:grid lg:grid-cols-[1.15fr_1fr] lg:items-end lg:gap-16",
+          )}
+        >
           <div className="reveal flex max-w-[720px] flex-col gap-5">
             <p className="type-eyebrow text-golden-yellow">{eyebrow}</p>
             <h1 className="type-display-lg max-w-[16ch] text-white">{title}</h1>
             <div className="type-lead max-w-[56ch] text-white/92">{intro}</div>
             {actions ? <div className="mt-3 flex flex-col gap-3 sm:flex-row">{actions}</div> : null}
           </div>
+          {aside ? <div className="reveal w-full max-w-[440px] lg:ml-auto lg:max-w-none [animation-delay:120ms]">{aside}</div> : null}
         </div>
       </section>
     );

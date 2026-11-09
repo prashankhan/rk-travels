@@ -10,11 +10,10 @@ export function WhatsAppFloat() {
       rel="noopener noreferrer"
       data-track="whatsapp_click"
       aria-label="Chat with R.K Travels on WhatsApp"
-      className="group fixed right-4 bottom-4 z-30 inline-flex h-[52px] w-[52px] items-center justify-center gap-2 overflow-hidden rounded-control bg-navy font-heading text-sm leading-5 font-semibold text-white shadow-menu transition-[background-color,transform] duration-200 ease-brand hover:-translate-y-0.5 hover:bg-navy-hover md:right-5 md:bottom-5 md:w-auto md:pr-5 md:pl-4"
+      className="group fixed right-4 bottom-4 z-30 inline-flex h-[52px] w-[52px] items-center justify-center gap-2 overflow-hidden rounded-control bg-whatsapp font-heading text-sm leading-5 font-semibold text-white shadow-menu transition-[background-color,transform] duration-200 ease-brand hover:-translate-y-0.5 hover:bg-whatsapp-hover md:right-5 md:bottom-5 md:w-auto md:pr-5 md:pl-4"
     >
       <WhatsAppIcon className="size-[22px]" />
       <span className="hidden md:inline">WhatsApp us</span>
-      <span aria-hidden className="absolute inset-x-0 bottom-0 h-[3px] bg-golden-yellow" />
     </a>
   );
 }

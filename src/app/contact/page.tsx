@@ -1,6 +1,8 @@
 import { PageHero } from "@/components/sections/page-hero";
 import { ContactPanel } from "@/components/sections/contact-panel";
 import { ContactForm } from "@/components/forms/contact-form";
+import { Button } from "@/components/ui/button";
+import { images } from "@/data/images";
 import { whatsappMessages } from "@/lib/whatsapp";
 import { pageMetadata } from "@/lib/seo";
 
@@ -17,7 +19,18 @@ export default function ContactPage() {
         eyebrow="Contact"
         title={<>Let&rsquo;s plan <em className="italic">your journey.</em></>}
         intro="Message us on WhatsApp, give us a call, or send the form below. We will reply to talk through your plans."
-        aside={<ContactPanel message={whatsappMessages.contact} note="WhatsApp is usually the easiest way to share details and photos of your plans." />}
+        image={images.contactHero}
+        aside={
+          <ContactPanel
+            message={whatsappMessages.contact}
+            note="WhatsApp is usually the easiest way to share details and photos of your plans."
+          />
+        }
+        actions={
+          <Button asChild>
+            <a href="#enquiry">Send an enquiry</a>
+          </Button>
+        }
       />
       <section id="enquiry" aria-labelledby="enquiry-title" className="section-y border-y border-border bg-warm-white">
         <div className="container-site grid gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.4fr)] lg:items-start lg:gap-20">
