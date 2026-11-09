@@ -1,4 +1,5 @@
-import { MapPin, MessageCircle, Phone } from "lucide-react";
+import { MapPin, Phone } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { Button } from "@/components/ui/button";
 import { site } from "@/lib/site";
 import { telLink, whatsappLink } from "@/lib/whatsapp";
@@ -8,7 +9,7 @@ import { cn } from "@/lib/utils";
 export function ContactPanel({ message, note, className }: { message: string; note?: string; className?: string }) {
   const wa = whatsappLink(message);
   const rows = [
-    { icon: MessageCircle, label: "WhatsApp", value: site.phone.display, href: wa, external: true, track: "whatsapp_click" },
+    { icon: WhatsAppIcon, label: "WhatsApp", value: site.phone.display, href: wa, external: true, track: "whatsapp_click" },
     { icon: Phone, label: "Phone", value: site.phone.display, href: telLink(), track: "phone_click" },
     { icon: MapPin, label: "Location", value: site.location.display },
   ];
@@ -42,7 +43,7 @@ export function ContactPanel({ message, note, className }: { message: string; no
       <div className="flex flex-wrap gap-3 p-6">
         <Button asChild className="flex-[1_1_200px]">
           <a href={wa} target="_blank" rel="noopener noreferrer" data-track="whatsapp_click">
-            <MessageCircle aria-hidden strokeWidth={1.75} /> Chat on WhatsApp
+            <WhatsAppIcon /> Chat on WhatsApp
           </a>
         </Button>
         <Button asChild variant="outline" className="flex-[1_1_200px]">

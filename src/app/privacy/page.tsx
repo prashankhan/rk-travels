@@ -6,9 +6,9 @@ export const metadata = { ...pageMetadata({ title: "Privacy policy", description
 export default function PrivacyPage() {
   return (
     <article className="container-site max-w-narrow py-16 lg:py-24">
-      <p className="type-eyebrow flex items-center gap-3 text-muted"><span aria-hidden className="rule-accent" />Legal</p>
+      <p className="type-eyebrow text-golden-yellow">Legal</p>
       <h1 className="type-display-lg mt-4 text-navy">Privacy policy</h1>
-      <div className="mt-10 flex flex-col gap-5 text-charcoal [&_h2]:font-heading [&_h2]:text-[22px] [&_h2]:leading-[30px] [&_h2]:font-semibold [&_h2]:mt-6 [&_h2]:text-navy">
+      <div className="mt-10 flex flex-col gap-5 text-charcoal [&_h2]:type-heading-3 [&_h2]:mt-6 [&_h2]:text-navy">
         <p className="type-lead">This page explains how {site.name} uses the information you share with us through this website.</p>
         <h2>What we collect</h2>
         <p>When you send an enquiry form, we receive the details you enter, such as your name, WhatsApp number, travel dates, locations and any notes. We do not ask for payment details on this website.</p>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MessageCircle } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { Button } from "@/components/ui/button";
 import { whatsappLink, whatsappMessages } from "@/lib/whatsapp";
 
@@ -28,7 +28,7 @@ export function CTABanner({
       <div className="relative grid gap-8 overflow-hidden rounded-card bg-warm-white px-5 pt-12 pb-6 md:px-12 md:py-14 lg:grid-cols-[1.35fr_1fr] lg:items-end lg:gap-12 lg:p-16">
         <span aria-hidden className="absolute top-0 left-5 h-1 w-16 bg-golden-yellow md:left-12 lg:left-16" />
         <div className="flex flex-col gap-4">
-          <p className="type-eyebrow text-muted">{eyebrow}</p>
+          <p className="type-eyebrow text-golden-yellow">{eyebrow}</p>
           <h2 id="cta-title" className="type-display-md text-navy">{title}</h2>
           <p className="max-w-[46ch] text-[17px] leading-7 text-charcoal">{text}</p>
         </div>
@@ -38,7 +38,7 @@ export function CTABanner({
           </Button>
           <Button asChild variant="outline">
             <a href={whatsappLink(message)} target="_blank" rel="noopener noreferrer" data-track="whatsapp_click">
-              <MessageCircle aria-hidden strokeWidth={1.75} /> WhatsApp us
+              <WhatsAppIcon /> WhatsApp us
             </a>
           </Button>
         </div>

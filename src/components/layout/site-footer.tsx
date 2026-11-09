@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { MapPin, MessageCircle, Phone } from "lucide-react";
+import { MapPin, Phone } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { footerNav } from "@/data/navigation";
 import { site } from "@/lib/site";
 import { telLink, whatsappLink, whatsappMessages } from "@/lib/whatsapp";
@@ -40,7 +41,7 @@ export function SiteFooter() {
             <ul className="flex flex-col gap-3 text-[15px] leading-[22px]">
               <li>
                 <a href={whatsappLink(whatsappMessages.general)} target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" className="inline-flex items-center gap-2 font-medium text-navy hover:underline hover:decoration-golden-yellow hover:underline-offset-4">
-                  <MessageCircle aria-hidden className="size-[18px]" strokeWidth={1.75} /> WhatsApp {site.phone.display}
+                  <WhatsAppIcon className="size-[18px]" /> WhatsApp {site.phone.display}
                 </a>
               </li>
               <li>

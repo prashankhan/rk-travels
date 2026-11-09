@@ -19,12 +19,14 @@ export default function ContactPage() {
         intro="Message us on WhatsApp, give us a call, or send the form below. We will reply to talk through your plans."
         aside={<ContactPanel message={whatsappMessages.contact} note="WhatsApp is usually the easiest way to share details and photos of your plans." />}
       />
-      <section id="enquiry" aria-labelledby="enquiry-title" className="section-y">
-        <div className="container-site grid gap-10 lg:grid-cols-[1fr_1.7fr] lg:gap-20">
-          <div className="flex flex-col gap-4">
-            <p className="type-eyebrow flex items-center gap-3 text-muted"><span aria-hidden className="rule-accent" />General enquiry</p>
+      <section id="enquiry" aria-labelledby="enquiry-title" className="section-y border-y border-border bg-warm-white">
+        <div className="container-site grid gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.4fr)] lg:items-start lg:gap-20">
+          <div className="flex flex-col gap-4 lg:sticky lg:top-28">
+            <p className="type-eyebrow text-golden-yellow">General enquiry</p>
             <h2 id="enquiry-title" className="type-heading-1 text-navy">Send us a message.</h2>
-            <p className="type-lead text-charcoal">Ask a question or tell us about your trip. For a specific service, the forms on the airport transfers, vehicle rentals and tours pages ask for the details we need.</p>
+            <p className="type-lead max-w-[36ch] text-charcoal">
+              Ask a question or tell us about your trip. For a specific service, the forms on the airport transfers, vehicle rentals and tours pages ask for the details we need.
+            </p>
           </div>
           <div className="rounded-card border border-border bg-white p-5 shadow-card sm:p-8 lg:p-10">
             <ContactForm />

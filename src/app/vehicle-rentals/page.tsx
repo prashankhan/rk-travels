@@ -36,11 +36,17 @@ export default function VehicleRentalsPage() {
 
       <section aria-labelledby="cat-title" className="section-y">
         <div className="container-site">
-          <SectionHeading id="cat-title" eyebrow="Vehicle categories" title="Choose the right vehicle for the trip." />
+          <SectionHeading
+            id="cat-title"
+            eyebrow="Vehicle categories"
+            title="Choose the right vehicle for the trip."
+            intro="Cars, vans, motorcycles and tuk-tuks — tell us what suits your group and we will confirm what is available."
+          />
           <ul className="mt-12 grid gap-8 sm:grid-cols-2 lg:mt-14 lg:grid-cols-4 lg:gap-6">
             {vehicleCategories.map((v) => (
               <li key={v.id}>
-                <article aria-labelledby={`veh-${v.id}`} className="flex h-full flex-col overflow-hidden rounded-card border border-border bg-white shadow-card">
+                <article aria-labelledby={`veh-${v.id}`} className="relative flex h-full flex-col overflow-hidden rounded-card border border-border bg-white shadow-card">
+                  <span aria-hidden className="absolute top-0 left-0 z-[1] h-0.5 w-12 bg-golden-yellow" />
                   <div className="relative aspect-[4/3]">
                     <Photo image={v.image} sizes="(min-width: 1024px) 300px, (min-width: 640px) 50vw, 100vw" className="border-0 border-b" />
                   </div>
@@ -58,7 +64,7 @@ export default function VehicleRentalsPage() {
               </li>
             ))}
           </ul>
-          <div className="mt-10 flex gap-3 rounded-menu border border-border bg-warm-white p-4 text-[15px] leading-[22px] text-charcoal">
+          <div className="mt-10 flex gap-3 border-t border-border pt-6 text-[15px] leading-[22px] text-charcoal">
             <Info aria-hidden className="mt-px size-5 shrink-0 text-navy" strokeWidth={1.75} />
             <p>
               Availability, vehicle details and driver options depend on your dates. We confirm them when we reply to your enquiry.
@@ -77,7 +83,11 @@ export default function VehicleRentalsPage() {
         notes={["We receive your request by email.", "We reply on WhatsApp with availability.", "Your rental is arranged once confirmed."]}
       />
 
-      <FaqSection faqs={rentalFaqs} title="Rental questions" />
+      <FaqSection
+        faqs={rentalFaqs}
+        title="Rental questions"
+        intro="Common questions about requesting a vehicle and how confirmation works."
+      />
       <CTABanner
         title={<>Need a pickup too? <em className="italic">We can arrange the whole trip.</em></>}
         text="Combine your rental with an airport transfer or a planned tour. Mention it in your enquiry."

@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { WhatsAppFloat } from "@/components/layout/whatsapp-float";
+import { PlanJourneyProvider } from "@/components/layout/plan-journey-provider";
 import { GoogleAnalytics } from "@/components/analytics/google-analytics";
 import { site, siteUrl } from "@/lib/site";
 import { JsonLd, ogImage, organizationJsonLd } from "@/lib/seo";
@@ -58,14 +59,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           Skip to content
         </a>
-        <SiteHeader />
-        <main id="main" className="flex-1">
-          {children}
-        </main>
-        <SiteFooter />
-        <aside aria-label="Quick contact">
-          <WhatsAppFloat />
-        </aside>
+        <PlanJourneyProvider>
+          <SiteHeader />
+          <main id="main" className="flex-1">
+            {children}
+          </main>
+          <SiteFooter />
+          <aside aria-label="Quick contact">
+            <WhatsAppFloat />
+          </aside>
+        </PlanJourneyProvider>
         <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() || undefined} />
         <JsonLd data={organizationJsonLd()} />
       </body>

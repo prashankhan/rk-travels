@@ -32,7 +32,7 @@ The site is built only from confirmed information. Each item below needs R.K Tra
 | Company history, statistics, awards | None shown |
 
 ## Photography
-No client photography has been supplied. Every image on the site is an honest "Photo pending" slot listing the intended shot. Supply photos and set `src` for each entry in `src/data/images.ts` (files go in `public/images/`). Priority shots: home hero (coastal road with a vehicle), airport arrivals, the vans and cars actually used, and Negombo.
+No client photography has been supplied. The site currently uses licensed Pexels and Unsplash stand-ins (`public/images/`, wired in `src/data/images.ts`). Sri Lanka landmarks, Negombo, tea country, and tuk-tuks are photographs of those places. The car, van, motorcycle, and aircraft wing are generic travel pictures, not the fleet and not Bandaranaike airport. Replace each file with the client's own photo, keeping the same path. Priority replacements: the home hero, airport arrivals, and the vans and cars actually used. The founder portrait is still the "S" monogram.
 
 ## Legal
 The privacy policy and terms pages are plain-language drafts based on how the site works. Have them reviewed before launch, and add the business's legal name and contact email once confirmed.

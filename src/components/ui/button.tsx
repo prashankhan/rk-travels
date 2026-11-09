@@ -6,8 +6,8 @@ import { cn } from "@/lib/utils";
 
 export const buttonVariants = cva(
   [
-    "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-control border border-transparent",
-    "font-heading font-semibold tracking-[0.01em] no-underline cursor-pointer select-none",
+    "inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-control border border-transparent",
+    "font-label font-bold uppercase tracking-tight no-underline cursor-pointer select-none",
     "transition-[background-color,border-color,color,transform] duration-150 ease-brand active:translate-y-px",
     "disabled:cursor-not-allowed disabled:bg-disabled-bg disabled:text-muted disabled:border-transparent disabled:translate-y-0",
     "aria-disabled:cursor-not-allowed aria-disabled:bg-disabled-bg aria-disabled:text-muted aria-disabled:border-transparent",
@@ -22,8 +22,8 @@ export const buttonVariants = cva(
         "outline-inverse": "bg-transparent border-white text-white hover:bg-white/12",
       },
       size: {
-        md: "h-[50px] px-6 text-[15px] leading-5",
-        sm: "h-11 px-4 text-sm leading-5",
+        md: "h-14 min-h-14 px-8 text-base leading-none",
+        sm: "h-11 px-4 text-base leading-5",
       },
       fullWidth: { true: "flex w-full" },
     },
@@ -34,7 +34,7 @@ export const buttonVariants = cva(
 type ButtonProps = React.ComponentProps<"button"> &
   VariantProps<typeof buttonVariants> & { asChild?: boolean; loading?: boolean };
 
-/** Montserrat SemiBold, sentence case, 2px corners. See docs/DESIGN_SYSTEM.md. */
+/** GT America Expanded, uppercase, square corners, 56px tall. */
 export function Button({ className, variant, size, fullWidth, asChild = false, loading = false, disabled, children, ...props }: ButtonProps) {
   if (asChild) {
     return (

@@ -41,20 +41,33 @@ export default function ToursPage() {
       />
 
       <section aria-labelledby="ways-title" className="section-y">
-        <div className="container-site grid gap-12 lg:grid-cols-[1fr_1.6fr] lg:gap-20">
-          <SectionHeading id="ways-title" eyebrow="Ways to travel" title="Every trip is planned around you." />
+        <div className="container-site grid gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.4fr)] lg:items-start lg:gap-20">
+          <SectionHeading
+            id="ways-title"
+            eyebrow="Ways to travel"
+            title="Every trip is planned around you."
+            intro="Day trips, family journeys or multi-day routes — tell us the pace and places you care about."
+            className="lg:sticky lg:top-28"
+          />
           <ul className="grid sm:grid-cols-2">
             {ways.map((w, i) => (
-              <li key={w.title} className={`flex flex-col gap-3 border-t border-border py-8 sm:pr-8 ${i % 2 === 1 ? "sm:border-l sm:pl-8" : ""}`}>
-                <h3 className="type-heading-4 text-navy">{w.title}</h3>
-                <p className="text-charcoal">{w.text}</p>
+              <li
+                key={w.title}
+                className={`relative flex flex-col gap-3 border-t border-border pt-8 pb-10 sm:pr-10 ${i % 2 === 1 ? "sm:border-l sm:pl-10" : ""}`}
+              >
+                <span
+                  aria-hidden
+                  className={`absolute top-0 h-0.5 w-12 bg-golden-yellow ${i % 2 === 1 ? "left-0 sm:left-10" : "left-0"}`}
+                />
+                <h3 className="type-heading-3 text-navy">{w.title}</h3>
+                <p className="max-w-[36ch] text-[15px] leading-6 text-charcoal">{w.text}</p>
               </li>
             ))}
           </ul>
         </div>
       </section>
 
-      <section aria-labelledby="dest-title" className="pb-16 lg:pb-28">
+      <section aria-labelledby="dest-title" className="section-y border-y border-border bg-warm-white">
         <div className="container-site">
           <SectionHeading
             id="dest-title"
@@ -81,7 +94,11 @@ export default function ToursPage() {
         notes={["We receive your request by email.", "We reply on WhatsApp to shape the plan with you.", "Your tour is arranged once confirmed."]}
       />
 
-      <FaqSection faqs={tourFaqs} title="Tour questions" />
+      <FaqSection
+        faqs={tourFaqs}
+        title="Tour questions"
+        intro="Common questions about planning a private or custom journey with us."
+      />
       <CTABanner
         title={<>Arriving soon? <em className="italic">Start with the airport.</em></>}
         text="Combine your tour with an airport pickup so your journey starts the moment you land."

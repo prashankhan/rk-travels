@@ -12,7 +12,7 @@ export function Logo({ className, priority, href = "/", label = "R.K Travels hom
       height={logos.primary.height}
       alt={href ? label : "R.K Travels"}
       priority={priority}
-      sizes="(min-width: 1024px) 120px, 100px"
+      sizes="(min-width: 1024px) 180px, 140px"
       className={cn("h-[46px] w-auto", className)}
     />
   );

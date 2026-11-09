@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { HomeHero } from "@/components/sections/home-hero";
 import { ServiceCard } from "@/components/sections/service-card";
 import { SectionHeading } from "@/components/sections/section-heading";
@@ -9,6 +10,7 @@ import { FaqSection } from "@/components/sections/faq-section";
 import { CTABanner } from "@/components/sections/cta-banner";
 import { Photo } from "@/components/sections/photo";
 import { Button } from "@/components/ui/button";
+import { PlanJourneyButton } from "@/components/layout/plan-journey-button";
 import { primaryServices, supportingServices } from "@/data/services";
 import { destinations } from "@/data/destinations";
 import { homeFaqs } from "@/data/faqs";
@@ -48,7 +50,7 @@ export default function HomePage() {
               title="Every journey, made simple."
               intro="From the moment you arrive to every destination you explore, discover transport and travel services tailored to your plans."
             />
-            <Link href="/services" className="group inline-flex shrink-0 items-center gap-2 self-start py-1.5 font-heading text-[15px] font-semibold text-navy shadow-[inset_0_-2px_0_var(--color-golden-yellow)] lg:self-auto">
+            <Link href="/services" className="group inline-flex shrink-0 items-center gap-2 self-start py-1.5 font-label text-sm font-semibold uppercase tracking-tight text-navy shadow-[inset_0_-2px_0_var(--color-golden-yellow)] lg:self-auto">
               All services <ArrowRight aria-hidden className="size-[18px] transition-transform group-hover:translate-x-[3px]" strokeWidth={1.75} />
             </Link>
           </div>
@@ -67,7 +69,7 @@ export default function HomePage() {
             <Photo image={images.aboutJourney} sizes="(min-width: 1024px) 560px, 100vw" className="rounded-card" />
           </div>
           <div className="order-1 flex flex-col gap-6 lg:order-2">
-            <p className="type-eyebrow flex items-center gap-3 text-muted"><span aria-hidden className="rule-accent" />About R.K Travels</p>
+            <p className="type-eyebrow text-golden-yellow">About R.K Travels</p>
             <h2 id="intro-title" className="type-display-lg text-navy">
               More than a ride. <em className="italic">Your travel partner in Sri Lanka.</em>
             </h2>
@@ -87,9 +89,17 @@ export default function HomePage() {
       </section>
 
       {/* How it works */}
-      <section aria-labelledby="how-title" className="section-y">
+      <section
+        aria-labelledby="how-title"
+        className="section-y bg-golden-yellow [&_.type-eyebrow]:text-navy [&_ol>li]:border-navy/20 [&_ol>li>span.absolute]:bg-navy"
+      >
         <div className="container-site flex flex-col gap-12 lg:gap-16">
-          <SectionHeading id="how-title" eyebrow="How it works" title="Plan in three simple steps." />
+          <SectionHeading
+            id="how-title"
+            eyebrow="How it works"
+            title="Plan in three simple steps."
+            intro="Send your plans, confirm the details with us on WhatsApp, then travel with everything arranged."
+          />
           <Steps
             steps={[
               { title: "Tell us your plans", text: "Send an enquiry form or a WhatsApp message with your dates, route and number of travellers." },
@@ -101,7 +111,7 @@ export default function HomePage() {
       </section>
 
       {/* Destinations — asymmetric editorial grid */}
-      <section aria-labelledby="dest-title" className="pb-16 lg:pb-28">
+      <section aria-labelledby="dest-title" className="section-y">
         <div className="container-site">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <SectionHeading
@@ -111,7 +121,7 @@ export default function HomePage() {
               title="Where will the road take you?"
               intro="A few places travellers often ask about. Every journey is planned around you, so treat these as inspiration."
             />
-            <Link href="/tours" className="group inline-flex shrink-0 items-center gap-2 self-start py-1.5 font-heading text-[15px] font-semibold text-navy shadow-[inset_0_-2px_0_var(--color-golden-yellow)] lg:self-auto">
+            <Link href="/tours" className="group inline-flex shrink-0 items-center gap-2 self-start py-1.5 font-label text-sm font-semibold uppercase tracking-tight text-navy shadow-[inset_0_-2px_0_var(--color-golden-yellow)] lg:self-auto">
               Tours & experiences <ArrowRight aria-hidden className="size-[18px] transition-transform group-hover:translate-x-[3px]" strokeWidth={1.75} />
             </Link>
           </div>
@@ -126,9 +136,9 @@ export default function HomePage() {
                   Galle, Nuwara Eliya, the coast, the hills — <em className="italic">tell us what you would like to see.</em>
                 </p>
                 <div>
-                  <Button asChild variant="outline" size="sm">
-                    <Link href="/tours#tour-enquiry">Request a custom journey</Link>
-                  </Button>
+                  <PlanJourneyButton variant="outline" size="sm">
+                    Request a custom journey
+                  </PlanJourneyButton>
                 </div>
               </div>
             </div>
@@ -137,48 +147,77 @@ export default function HomePage() {
       </section>
 
       {/* Why travel with us */}
-      <section aria-labelledby="why-title" className="border-y border-border bg-warm-white">
-        <div className="container-site grid gap-12 py-16 lg:grid-cols-[1fr_1.5fr] lg:gap-20 lg:py-28">
-          <SectionHeading id="why-title" eyebrow="Why R.K Travels" title="Travel arrangements that keep things simple." className="lg:sticky lg:top-28 lg:self-start" />
-          <ul className="grid sm:grid-cols-2">
+      <section aria-labelledby="why-title" className="section-y border-y border-border bg-warm-white">
+        <div className="container-site grid gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.4fr)] lg:items-start lg:gap-20">
+          <SectionHeading
+            id="why-title"
+            eyebrow="Why R.K Travels"
+            title="Travel arrangements that keep things simple."
+            intro="A local partner in Negombo for transfers, vehicles and tours — arranged around your trip, not a fixed package list."
+            className="lg:sticky lg:top-28"
+          />
+          <ol className="grid sm:grid-cols-2">
             {reasons.map((r, i) => (
-              <li key={r.title} className={`flex flex-col gap-3 border-t border-border py-8 sm:pr-8 ${i % 2 === 1 ? "sm:pl-8 sm:border-l" : ""}`}>
-                <h3 className="type-heading-4 text-navy">{r.title}</h3>
-                <p className="text-charcoal">{r.text}</p>
+              <li
+                key={r.title}
+                className={`relative flex flex-col gap-3 border-t border-border pt-8 pb-10 sm:pr-10 ${i % 2 === 1 ? "sm:border-l sm:pl-10" : ""}`}
+              >
+                <span
+                  aria-hidden
+                  className={`absolute top-0 h-0.5 w-12 bg-golden-yellow ${i % 2 === 1 ? "left-0 sm:left-10" : "left-0"}`}
+                />
+                <span aria-hidden className="font-display text-[40px] leading-none text-navy md:text-[44px]">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="type-heading-3 text-navy">{r.title}</h3>
+                <p className="max-w-[36ch] text-[15px] leading-6 text-charcoal">{r.text}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* Supporting services — secondary, but with clear hierarchy */}
+      <section aria-labelledby="extra-title" className="section-y border-y border-border bg-warm-white">
+        <div className="container-site grid gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.4fr)] lg:items-start lg:gap-20">
+          <SectionHeading
+            id="extra-title"
+            eyebrow="Also available"
+            title="Help with where you stay."
+            intro="Alongside transfers and tours, we can help arrange a hotel or a house as part of your enquiry."
+            className="lg:sticky lg:top-28"
+          />
+          <ul className="grid gap-0 sm:grid-cols-2">
+            {supportingServices.map((s, i) => (
+              <li
+                key={s.id}
+                className={`relative flex flex-col gap-4 border-t border-border pt-8 pb-10 sm:pr-10 ${i % 2 === 1 ? "sm:border-l sm:pl-10" : ""}`}
+              >
+                <span
+                  aria-hidden
+                  className={`absolute top-0 h-0.5 w-12 bg-golden-yellow ${i % 2 === 1 ? "left-0 sm:left-10" : "left-0"}`}
+                />
+                <h3 className="type-heading-3 text-navy">{s.title}</h3>
+                <p className="max-w-[36ch] text-[15px] leading-6 text-charcoal">{s.summary}</p>
+                <a
+                  href={whatsappLink(`Hello R.K Travels, I would like help with ${s.title.toLowerCase()}.`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-track="whatsapp_click"
+                  className="mt-auto inline-flex items-center gap-2 self-start py-1.5 font-label text-sm font-semibold uppercase tracking-tight text-navy shadow-[inset_0_-2px_0_var(--color-golden-yellow)]"
+                >
+                  <WhatsAppIcon className="size-4" /> Ask on WhatsApp
+                </a>
               </li>
             ))}
           </ul>
         </div>
       </section>
 
-      {/* Supporting services — deliberately secondary */}
-      <section aria-labelledby="extra-title" className="section-y pb-0 lg:pb-0">
-        <div className="container-site grid gap-10 lg:grid-cols-[1fr_2fr] lg:gap-20">
-          <div className="flex flex-col gap-4">
-            <p className="type-eyebrow flex items-center gap-3 text-muted"><span aria-hidden className="rule-accent" />Also available</p>
-            <h2 id="extra-title" className="type-heading-2 text-navy">Help with where you stay.</h2>
-          </div>
-          <div className="grid gap-8 sm:grid-cols-2">
-            {supportingServices.map((s) => (
-              <div key={s.id} className="flex flex-col gap-3">
-                <h3 className="type-heading-4 text-navy">{s.title}</h3>
-                <p className="text-charcoal">{s.summary}</p>
-                <a
-                  href={whatsappLink(`Hello R.K Travels, I would like help with ${s.title.toLowerCase()}.`)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-track="whatsapp_click"
-                  className="inline-flex items-center gap-2 self-start text-[15px] font-medium text-navy underline decoration-border-strong underline-offset-[3px] hover:decoration-golden-yellow hover:decoration-2"
-                >
-                  <MessageCircle aria-hidden className="size-4" strokeWidth={1.75} /> Ask on WhatsApp
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <FaqSection faqs={homeFaqs} />
+      <FaqSection
+        faqs={homeFaqs}
+        intro="Common questions about enquiries, confirmation and where we are based."
+      />
       <CTABanner message={whatsappMessages.general} />
     </>
   );

@@ -83,7 +83,9 @@ export function VehicleRentalForm({ defaultCategory }: { defaultCategory?: In["v
               {driverOptions.map((o) => (
                 <div key={o.value} className="flex items-start gap-3">
                   <RadioGroupItem value={o.value} id={id(o.value)} />
-                  <Label htmlFor={id(o.value)} className="cursor-pointer text-[15px] leading-[22px] font-normal text-charcoal">{o.label}</Label>
+                  <Label htmlFor={id(o.value)} className="cursor-pointer font-sans text-[15px] leading-[22px] font-normal normal-case tracking-normal text-charcoal">
+                    {o.label}
+                  </Label>
                 </div>
               ))}
             </RadioGroup>

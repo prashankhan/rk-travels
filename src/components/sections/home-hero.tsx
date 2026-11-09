@@ -6,7 +6,7 @@ import { Photo } from "./photo";
 /** Locked home hero: full-width photograph, navy scrim, approved copy. */
 export function HomeHero() {
   return (
-    <section aria-labelledby="hero-title" className="relative isolate flex min-h-[560px] items-end overflow-hidden bg-charcoal text-white md:min-h-[640px] lg:min-h-[min(760px,88vh)]">
+    <section aria-labelledby="hero-title" className="relative isolate flex min-h-[calc(100dvh-var(--header-height))] items-end overflow-hidden bg-charcoal text-white">
       <Photo image={images.homeHero} sizes="100vw" priority tone="dark" />
       <div
         aria-hidden

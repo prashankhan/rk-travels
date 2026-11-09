@@ -18,8 +18,8 @@ export function AccordionTrigger({ className, children, ...props }: React.Compon
     <AccordionPrimitive.Header className="m-0">
       <AccordionPrimitive.Trigger
         className={cn(
-          "group flex w-full cursor-pointer items-center justify-between gap-4 py-6 text-left",
-          "font-heading text-lg leading-[26px] font-semibold text-navy",
+          "group flex w-full cursor-pointer items-center justify-between gap-4 py-7 text-left",
+          "font-display text-[22px] leading-7 text-navy md:text-[24px] md:leading-8",
           className,
         )}
         {...props}

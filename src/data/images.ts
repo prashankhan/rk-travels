@@ -1,39 +1,104 @@
 /**
- * Every photograph on the site is listed here. No client photography has been supplied yet,
- * so each entry has `src: null` and renders an honest "Photo pending" slot describing the shot.
+ * Photographs for the site. R.K Travels has no photography yet, so these are licensed
+ * stock stand-ins from Pexels and Unsplash (free to use). Replace each file with the
+ * client's own photo and keep the same `src` path.
  *
- * To add a photo: put it in /public/images/... and set `src` (e.g. "/images/home/hero.jpg").
- * Use real R.K Travels photography wherever possible. Never present stock vehicles as the fleet,
- * and never invent staff portraits or customer trips. See CONTENT_PENDING.md.
+ * Places (Sigiriya, Kandy, Ella, Galle, Nuwara Eliya, Negombo, tea country, a Galle
+ * forest road, and the tuk-tuks) are photographs of Sri Lanka. The car, van, motorcycle,
+ * and aircraft wing are generic travel pictures — they are not the fleet and not
+ * Bandaranaike airport. Do not present them as either. No founder or customer portrait
+ * is invented. See CONTENT_PENDING.md.
  */
 export type SiteImage = {
   src: string | null;
   alt: string;
-  /** What the photograph should show. Shown in the pending slot. */
+  /** What the photograph should show once client photography replaces the stock file. */
   subject: string;
   /** Focal point for object-position, e.g. "70% 50%". */
   focus?: string;
 };
 
-const img = (subject: string, alt: string, focus?: string): SiteImage => ({ src: null, alt, subject, focus });
+function img(src: string, subject: string, alt: string, focus?: string): SiteImage {
+  return { src, alt, subject, focus };
+}
 
 export const images = {
-  homeHero: img("Scenic coastal road with a tourist vehicle, near Negombo", "A vehicle on a coastal road in Sri Lanka", "65% 50%"),
-  airportTransfers: img("Arrivals at Bandaranaike International Airport", "Travellers arriving at Bandaranaike International Airport"),
-  vehicleRentals: img("A tourist vehicle on a hill-country road", "A rental vehicle on a winding road in Sri Lanka's hill country"),
-  tours: img("Sigiriya rock fortress at first light", "Sigiriya rock fortress rising above the forest"),
-  aboutIntro: img("Negombo lagoon with fishing boats", "Fishing boats on Negombo lagoon"),
-  aboutJourney: img("Travellers on a scenic road journey", "Travellers stopping on a scenic road in Sri Lanka"),
-  servicesHero: img("Road journey through tea country", "A road winding through tea plantations"),
-  contactHero: img("Negombo beach in the evening", "Negombo beach at sunset"),
-  cars: img("A car suited to two to four travellers", "A car for hire in Sri Lanka"),
-  vans: img("A van for families and groups", "A van for family and group travel"),
-  motorcycles: img("A motorcycle on a quiet coastal road", "A motorcycle on a coastal road"),
-  tuktuks: img("A tuk-tuk on a Negombo street", "A tuk-tuk on a street in Negombo"),
-  sigiriya: img("Sigiriya rock fortress", "Sigiriya rock fortress"),
-  kandy: img("Kandy lake and the Temple of the Tooth", "Kandy lake with the Temple of the Sacred Tooth Relic"),
-  ella: img("Nine Arches Bridge, Ella", "The Nine Arches Bridge near Ella"),
-  galle: img("Galle Fort ramparts by the sea", "The ramparts of Galle Fort"),
-  nuwaraEliya: img("Tea plantations around Nuwara Eliya", "Tea plantations in the hills around Nuwara Eliya"),
-  negombo: img("Negombo beach and lagoon", "Negombo beach"),
+  homeHero: img(
+    "/images/vehicles/forest-road.jpg",
+    "Scenic coastal road with a tourist vehicle, near Negombo",
+    "A tree-lined road in Sri Lanka",
+    "50% 45%",
+  ),
+  airportTransfers: img(
+    "/images/airport/wing.jpg",
+    "Arrivals at Bandaranaike International Airport",
+    "An aircraft wing above the clouds",
+    "50% 45%",
+  ),
+  vehicleRentals: img(
+    "/images/vehicles/tuk-tuk.jpg",
+    "A tourist vehicle on a hill-country road",
+    "A tuk-tuk on a country road in Sri Lanka",
+    "50% 55%",
+  ),
+  tours: img(
+    "/images/tours/sigiriya.jpg",
+    "Sigiriya rock fortress at first light",
+    "Sigiriya rock fortress rising above the forest",
+    "50% 40%",
+  ),
+  aboutIntro: img(
+    "/images/about/negombo-sunset.jpg",
+    "Negombo lagoon with fishing boats",
+    "Sunset over the sea at Negombo",
+    "50% 35%",
+  ),
+  aboutJourney: img(
+    "/images/about/journey-road.jpg",
+    "Travellers on a scenic road journey",
+    "A train journey through the hills near Ella, Sri Lanka",
+    "40% 50%",
+  ),
+  servicesHero: img(
+    "/images/services/tea-country.jpg",
+    "Road journey through tea country",
+    "Tea plantations in Sri Lanka's hill country",
+    "50% 45%",
+  ),
+  contactHero: img(
+    "/images/about/negombo-sunset.jpg",
+    "Negombo beach in the evening",
+    "Sunset over the sea at Negombo",
+    "50% 35%",
+  ),
+  cars: img("/images/vehicles/car.jpg", "A car suited to two to four travellers", "A car travelling on an open road", "50% 55%"),
+  vans: img("/images/vehicles/van.jpg", "A van for families and groups", "A passenger van on a mountain road", "50% 60%"),
+  motorcycles: img(
+    "/images/vehicles/motorcycle.jpg",
+    "A motorcycle on a quiet coastal road",
+    "A motorcycle on a palm-lined coastal road",
+    "50% 62%",
+  ),
+  tuktuks: img(
+    "/images/vehicles/tuk-tuk.jpg",
+    "A tuk-tuk on a Negombo street",
+    "A tuk-tuk on a country road in Sri Lanka",
+    "50% 55%",
+  ),
+  sigiriya: img("/images/destinations/sigiriya.jpg", "Sigiriya rock fortress", "Sigiriya rock fortress", "50% 42%"),
+  kandy: img(
+    "/images/destinations/kandy.jpg",
+    "Kandy lake and the Temple of the Tooth",
+    "The Temple of the Sacred Tooth Relic in Kandy",
+    "50% 28%",
+  ),
+  ella: img("/images/destinations/ella.jpg", "Nine Arches Bridge, Ella", "A train crossing the Nine Arches Bridge near Ella", "50% 55%"),
+  galle: img("/images/destinations/galle.jpg", "Galle Fort ramparts by the sea", "The ramparts of Galle Fort", "50% 32%"),
+  nuwaraEliya: img(
+    "/images/destinations/nuwara-eliya.jpg",
+    "Tea plantations around Nuwara Eliya",
+    "Tea plantations in the hills around Nuwara Eliya",
+    "50% 45%",
+  ),
+  negombo: img("/images/home/negombo-boats.jpg", "Negombo beach and lagoon", "Traditional fishing boats on Negombo beach", "50% 60%"),
 } satisfies Record<string, SiteImage>;

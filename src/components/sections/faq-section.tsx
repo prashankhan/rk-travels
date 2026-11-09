@@ -3,7 +3,19 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { cn } from "@/lib/utils";
 
 /** FAQ list with matching FAQPage structured data. */
-export function FaqSection({ faqs, title = "Questions, answered", eyebrow = "FAQs", className }: { faqs: Faq[]; title?: string; eyebrow?: string; className?: string }) {
+export function FaqSection({
+  faqs,
+  title = "Questions, answered",
+  eyebrow = "FAQs",
+  intro,
+  className,
+}: {
+  faqs: Faq[];
+  title?: string;
+  eyebrow?: string;
+  intro?: string;
+  className?: string;
+}) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -11,13 +23,11 @@ export function FaqSection({ faqs, title = "Questions, answered", eyebrow = "FAQ
   };
   return (
     <section aria-labelledby="faq-title" className={cn("section-y", className)}>
-      <div className="container-site grid gap-10 lg:grid-cols-[1fr_1.6fr] lg:gap-16">
-        <div className="flex flex-col gap-4">
-          <p className="type-eyebrow flex items-center gap-3 text-muted">
-            <span aria-hidden className="rule-accent" />
-            {eyebrow}
-          </p>
+      <div className="container-site grid gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.4fr)] lg:items-start lg:gap-20">
+        <div className="flex flex-col gap-4 lg:sticky lg:top-28">
+          <p className="type-eyebrow text-golden-yellow">{eyebrow}</p>
           <h2 id="faq-title" className="type-heading-1 text-navy">{title}</h2>
+          {intro ? <p className="type-lead max-w-[36ch] text-charcoal">{intro}</p> : null}
         </div>
         <Accordion type="multiple" defaultValue={["item-0"]}>
           {faqs.map((f, i) => (

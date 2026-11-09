@@ -1,8 +1,9 @@
 "use client";
 
 import * as React from "react";
-import { CircleAlert, CircleCheck, Info, MessageCircle } from "lucide-react";
+import { CircleAlert, CircleCheck, Info } from "lucide-react";
 import type { FieldValues, Path, UseFormSetError } from "react-hook-form";
+import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { track, type AnalyticsEvent } from "@/lib/analytics";
@@ -36,7 +37,7 @@ export function Field({
     <div className={cn("flex min-w-0 flex-col gap-2", className)}>
       <Label htmlFor={id}>
         {label}
-        {optional ? <span className="font-normal text-muted"> (optional)</span> : null}
+        {optional ? <span className="font-medium normal-case tracking-normal text-muted"> (optional)</span> : null}
       </Label>
       {children({ id, "aria-invalid": error ? true : undefined, "aria-describedby": describedBy, "aria-required": optional ? undefined : true })}
       {hint ? (
@@ -198,7 +199,7 @@ export function FormSuccess({ whatsappMessage, onReset }: { whatsappMessage: str
         action={
           <Button asChild size="sm" variant="outline">
             <a href={whatsappLink(whatsappMessage)} target="_blank" rel="noopener noreferrer" data-track="whatsapp_click">
-              <MessageCircle aria-hidden strokeWidth={1.75} /> Also message us on WhatsApp
+              <WhatsAppIcon /> Also message us on WhatsApp
             </a>
           </Button>
         }
@@ -224,7 +225,7 @@ export function FormFooter({ status, submitLabel, whatsappMessage }: { status: S
           action={
             <Button asChild size="sm" variant="outline">
               <a href={whatsappLink(whatsappMessage)} target="_blank" rel="noopener noreferrer" data-track="whatsapp_click">
-                <MessageCircle aria-hidden strokeWidth={1.75} /> Message us on WhatsApp
+                <WhatsAppIcon /> Message us on WhatsApp
               </a>
             </Button>
           }
