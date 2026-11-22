@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="../shared/brand.css">
+<style>
+  @page { size: 96mm 56mm; margin: 0; }
+  html, body { width: 96mm; height: 56mm; background: var(--white); }
+  .art { position: relative; width: 96mm; height: 56mm; overflow: hidden; background: var(--white); }
+  .guide { position: absolute; pointer-events: none; display: none; }
+  .show-guides .guide { display: block; }
+  .trim { left: 3mm; top: 3mm; width: 90mm; height: 50mm; outline: 0.1mm solid #e0007a; }
+  .safe { left: 7mm; top: 7mm; width: 82mm; height: 42mm; outline: 0.1mm dashed #00a3e0; }
+  .tagline { font-family: var(--font-display); font-weight: 400; color: var(--navy); }
+  .tagline em { font-style: italic; }
+  .eyebrow { font: 600 4.6pt/1 var(--font-heading); letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+  .ico { width: 3mm; height: 3mm; flex: none; color: var(--navy); }

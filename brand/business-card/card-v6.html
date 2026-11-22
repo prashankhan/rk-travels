@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>R.K Travels — business card, version 6 (sunrise)</title>
+<!--
+  EDITABLE SOURCE — version 6 (sunrise). A rising sun in the brand colours, built from concentric rings in the corner.
+  Trim 90 × 50 mm, bleed 3 mm each side (artboard 96 × 56 mm), safe area 4 mm inside trim.
+  Open with ?side=front or ?side=back (&guides=1 shows trim and safe lines).
+  Edit text only. Do not alter the logo.
+-->
+<link rel="stylesheet" href="../shared/brand.css">
+<style>
+  @page { size: 96mm 56mm; margin: 0; }
+  html, body { width: 96mm; height: 56mm; background: var(--white); }
+  .art { position: relative; width: 96mm; height: 56mm; overflow: hidden; background: var(--white); }
+  .guide { position: absolute; pointer-events: none; display: none; }
+  .show-guides .guide { display: block; }
+  .trim { left: 3mm; top: 3mm; width: 90mm; height: 50mm; outline: 0.1mm solid #e0007a; }
+  .safe { left: 7mm; top: 7mm; width: 82mm; height: 42mm; outline: 0.1mm dashed #00a3e0; }
+  .tagline { font-family: var(--font-display); font-weight: 400; color: var(--navy); }
+  .tagline em { font-style: italic; }
+  .eyebrow { font: 600 4.6pt/1 var(--font-heading); letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+  .ico { width: 3mm; height: 3mm; flex: none; color: var(--navy); }
+
+  .contact { list-style: none; display: flex; flex-direction: column; gap: 1.5mm; }
+  .contact li { display: flex; align-items: center; gap: 2mm; font: 500 6.6pt/1.1 var(--font-body); color: var(--charcoal); }
+  .contact strong { font: 600 7.8pt/1 var(--font-heading); color: var(--navy); letter-spacing: .01em; }
+  .person .name { font: 700 12pt/1 var(--font-heading); color: var(--navy); letter-spacing: -.01em; }
+  .person .role { margin-top: 1.2mm; font: 500 6.4pt/1 var(--font-body); color: var(--charcoal); }
+
+  .front .tagline { position: absolute; left: 7mm; top: 9mm; font-size: 19pt; line-height: 0.98; letter-spacing: -.01em; }
+  .front .eyebrow { position: absolute; left: 7.2mm; bottom: 7mm; color: var(--navy); }
+  .front .logo { position: absolute; left: 7mm; bottom: 11mm; width: 30mm; display: block; }
+  .rings { position: absolute; right: -0.5mm; bottom: -0.5mm; width: 46mm; height: 46mm; overflow: visible; }
+  .rings circle.band { fill: none; }
+  .back .logo { position: absolute; left: 7mm; top: 7mm; width: 34mm; display: block; }
+  .back .person { position: absolute; left: 7mm; bottom: 20.5mm; }
+  .back .contact { position: absolute; left: 7mm; bottom: 7mm; }
+  .back .rings { width: 26mm; height: 26mm; }
+  .back .tag-sm { position: absolute; right: 7mm; top: 8mm; text-align: right; font-size: 8.5pt; line-height: 1.05; }
+
+</style>
+</head>
+<body>
+<section class="art front" id="front">
+  <p class="tagline">Dream &amp;<br>discover<br><em>Sri Lanka.</em></p>
+  <img class="logo" src="../shared/rk-travels-logo-full-colour.png" alt="R.K Travels">
+  <p class="eyebrow">Transfers · Rentals · Tours</p>
+  <svg class="rings" viewBox="0 0 100 100" aria-hidden="true">
+    <circle class="band" cx="100" cy="100" r="92" stroke="#008FD3" stroke-width="5"/>
+    <circle class="band" cx="100" cy="100" r="76" stroke="#06274D" stroke-width="9"/>
+    <circle class="band" cx="100" cy="100" r="60" stroke="#FF8A00" stroke-width="9"/>
+    <circle cx="100" cy="100" r="40" fill="#FFC107"/>
+  </svg>
+  <div class="guide trim"></div><div class="guide safe"></div>
+</section>
+<section class="art back" id="back">
+  <img class="logo" src="../shared/rk-travels-logo-full-colour.png" alt="R.K Travels">
+  <p class="tagline tag-sm">Dream &amp; discover<br><em>Sri Lanka</em></p>
+  <div class="person"><p class="name">Shri</p><p class="role">Founder</p></div>
+  <ul class="contact">
+      <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span><strong>+94 74 363 8418</strong></span></li>
+      <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg><span>WhatsApp on the same number</span></li>
+      <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Negombo, Sri Lanka</span></li>
+    </ul>
+  <svg class="rings" viewBox="0 0 100 100" aria-hidden="true">
+    <circle class="band" cx="100" cy="100" r="92" stroke="#008FD3" stroke-width="5"/>
+    <circle class="band" cx="100" cy="100" r="76" stroke="#06274D" stroke-width="9"/>
+    <circle class="band" cx="100" cy="100" r="60" stroke="#FF8A00" stroke-width="9"/>
+    <circle cx="100" cy="100" r="40" fill="#FFC107"/>
+  </svg>
+  <div class="guide trim"></div><div class="guide safe"></div>
+</section>
+<script>
+  const q = new URLSearchParams(location.search);
+  if (q.get("guides") === "1") document.body.classList.add("show-guides");
+  const side = q.get("side");
+  if (side) document.querySelectorAll(".art").forEach((el) => { if (el.id !== side) el.remove(); });
+</script>
+</body>
+</html>

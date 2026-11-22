@@ -38,3 +38,11 @@ Re-export: `node brand/business-card/render.mjs card-v2`.
 
 Re-export: `node brand/business-card/render.mjs card-v3`.
 - Update: the back now uses the full-colour logo (beside the phone number) instead of the RK mark; the stub shows a plane icon and the service list.
+
+## Concepts 4–6 — "Dream & discover Sri Lanka"
+Built around the tagline. Generated from `_build_concepts.py` (writes `card-v4.html`, `card-v5.html`, `card-v6.html`; shared bits in `_head.txt` / `_tail.txt`). Comparison sheet: `exports/rk-travels-card-concepts-4-6.png`.
+- **Version 4 — Island route:** a stylised Sri Lanka in navy with a dashed yellow route from Negombo through Sigiriya, Kandy, Ella and Galle; tagline in Instrument Serif. Back: details, a small island outline marking Negombo, and the full logo. The island is a simplified shape, not a map.
+- **Version 5 — Postcard:** navy and yellow airmail border. Front: logo and tagline on warm white. Back: a postcard ("Greetings from… Dream & discover Sri Lanka.") with a stamp, a Negombo postmark and the contact details on address lines.
+- **Version 6 — Sunrise:** the tagline set large, with a rising sun built from concentric rings in the brand colours in the corner. Back: logo, details and a smaller sunrise.
+
+Re-export one: `node brand/business-card/render.mjs card-v4` (or `card-v5`, `card-v6`).

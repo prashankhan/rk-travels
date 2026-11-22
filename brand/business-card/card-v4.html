@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>R.K Travels — business card, version 4 (island route)</title>
+<!--
+  EDITABLE SOURCE — version 4 (island route). A dashed travel route across a stylised Sri Lanka, starting from Negombo.
+  Trim 90 × 50 mm, bleed 3 mm each side (artboard 96 × 56 mm), safe area 4 mm inside trim.
+  Open with ?side=front or ?side=back (&guides=1 shows trim and safe lines).
+  Edit text only. Do not alter the logo.
+-->
+<link rel="stylesheet" href="../shared/brand.css">
+<style>
+  @page { size: 96mm 56mm; margin: 0; }
+  html, body { width: 96mm; height: 56mm; background: var(--white); }
+  .art { position: relative; width: 96mm; height: 56mm; overflow: hidden; background: var(--white); }
+  .guide { position: absolute; pointer-events: none; display: none; }
+  .show-guides .guide { display: block; }
+  .trim { left: 3mm; top: 3mm; width: 90mm; height: 50mm; outline: 0.1mm solid #e0007a; }
+  .safe { left: 7mm; top: 7mm; width: 82mm; height: 42mm; outline: 0.1mm dashed #00a3e0; }
+  .tagline { font-family: var(--font-display); font-weight: 400; color: var(--navy); }
+  .tagline em { font-style: italic; }
+  .eyebrow { font: 600 4.6pt/1 var(--font-heading); letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+  .ico { width: 3mm; height: 3mm; flex: none; color: var(--navy); }
+
+  .contact { list-style: none; display: flex; flex-direction: column; gap: 1.5mm; }
+  .contact li { display: flex; align-items: center; gap: 2mm; font: 500 6.6pt/1.1 var(--font-body); color: var(--charcoal); }
+  .contact strong { font: 600 7.8pt/1 var(--font-heading); color: var(--navy); letter-spacing: .01em; }
+  .person .name { font: 700 12pt/1 var(--font-heading); color: var(--navy); letter-spacing: -.01em; }
+  .person .role { margin-top: 1.2mm; font: 500 6.4pt/1 var(--font-body); color: var(--charcoal); }
+
+  .front .logo { position: absolute; left: 7mm; top: 7.5mm; width: 38mm; display: block; }
+  .front .tagline { position: absolute; left: 7mm; bottom: 7mm; font-size: 14.5pt; line-height: 1.02; }
+  .front .tagline .rule { display: block; width: 9mm; height: 0.6mm; background: var(--golden-yellow); margin-bottom: 2.6mm; }
+  .front .island { position: absolute; right: 6.5mm; top: 4.5mm; height: 47mm; width: auto; overflow: visible; }
+  .island .land { fill: var(--navy); }
+  .island .route { fill: none; stroke: var(--golden-yellow); stroke-width: 0.9; stroke-dasharray: 2.2 1.6; stroke-linecap: round; }
+  .island .stop { fill: var(--white); }
+  .island .home { fill: var(--golden-yellow); }
+  .island .ring { fill: none; stroke: var(--golden-yellow); stroke-width: 0.6; }
+  .front .here { position: absolute; right: 37mm; top: 33.6mm; font: 600 4.4pt/1 var(--font-heading); letter-spacing: .14em; text-transform: uppercase; color: var(--navy); }
+  .back { background: var(--warm-white); }
+  .back .person { position: absolute; left: 7mm; top: 7.5mm; }
+  .back .rule { position: absolute; left: 7mm; top: 21mm; width: 9mm; height: 0.5mm; background: var(--golden-yellow); }
+  .back .contact { position: absolute; left: 7mm; bottom: 7mm; }
+  .back .logo { position: absolute; right: 7mm; bottom: 7mm; width: 26mm; display: block; }
+  .back .mini { position: absolute; right: 9mm; top: 7mm; height: 15mm; width: auto; overflow: visible; }
+  .mini .land { fill: none; stroke: var(--navy); stroke-width: 1.4; }
+  .mini .home { fill: var(--golden-yellow); stroke: var(--navy); stroke-width: 0.8; }
+  .back .based { position: absolute; right: 18.5mm; top: 15.4mm; text-align: right; }
+
+</style>
+</head>
+<body>
+<section class="art front" id="front">
+  <img class="logo" src="../shared/rk-travels-logo-full-colour.png" alt="R.K Travels">
+  <p class="tagline"><span class="rule"></span>Dream &amp; discover<br><em>Sri Lanka.</em></p>
+  <svg class="island" viewBox="0 0 60 100" aria-hidden="true">
+    <path class="land" d="M22 2 C26 1 30 4 31 8 C33 14 38 20 44 28 C50 36 56 44 58 54 C60 64 58 74 52 84 C46 92 38 98 30 99 C24 100 18 96 15 90 C11 82 9 74 8 66 C7 58 6 50 5 42 C4 34 6 26 9 18 C12 10 17 3 22 2 Z"/>
+    <path class="route" d="M9 62 L33 40 L31 60 L43 72 L19 93"/>
+    <circle cx="33" cy="40" r="1.6" class="stop"/><circle cx="31" cy="60" r="1.6" class="stop"/><circle cx="43" cy="72" r="1.6" class="stop"/><circle cx="19" cy="93" r="1.6" class="stop"/>
+    <circle class="ring" cx="9" cy="62" r="3.6"/><circle class="home" cx="9" cy="62" r="2"/>
+  </svg>
+  <p class="here">Negombo</p>
+  <div class="guide trim"></div><div class="guide safe"></div>
+</section>
+<section class="art back" id="back">
+  <div class="person"><p class="name">Shri</p><p class="role">Founder, R.K Travels</p></div>
+  <div class="rule"></div>
+  <ul class="contact">
+      <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span><strong>+94 74 363 8418</strong></span></li>
+      <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg><span>WhatsApp on the same number</span></li>
+      <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Negombo, Sri Lanka</span></li>
+    </ul>
+  <svg class="mini" viewBox="0 0 60 100" aria-hidden="true"><path class="land" d="M22 2 C26 1 30 4 31 8 C33 14 38 20 44 28 C50 36 56 44 58 54 C60 64 58 74 52 84 C46 92 38 98 30 99 C24 100 18 96 15 90 C11 82 9 74 8 66 C7 58 6 50 5 42 C4 34 6 26 9 18 C12 10 17 3 22 2 Z"/><circle class="home" cx="9" cy="62" r="5"/></svg>
+  <p class="eyebrow based">Based in<br>Negombo</p>
+  <img class="logo" src="../shared/rk-travels-logo-full-colour.png" alt="R.K Travels">
+  <div class="guide trim"></div><div class="guide safe"></div>
+</section>
+<script>
+  const q = new URLSearchParams(location.search);
+  if (q.get("guides") === "1") document.body.classList.add("show-guides");
+  const side = q.get("side");
+  if (side) document.querySelectorAll(".art").forEach((el) => { if (el.id !== side) el.remove(); });
+</script>
+</body>
+</html>

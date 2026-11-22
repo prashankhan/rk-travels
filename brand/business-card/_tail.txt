@@ -1,0 +1,8 @@
+<script>
+  const q = new URLSearchParams(location.search);
+  if (q.get("guides") === "1") document.body.classList.add("show-guides");
+  const side = q.get("side");
+  if (side) document.querySelectorAll(".art").forEach((el) => { if (el.id !== side) el.remove(); });
+</script>
+</body>
+</html>
