@@ -45,10 +45,12 @@
   .back .name { font: 400 22pt/0.9 var(--font-display); color: var(--navy); }
   .back .v { font: 600 7.6pt/1.15 var(--font-heading); color: var(--navy); }
   .back .v.body { font: 500 7pt/1.2 var(--font-body); color: var(--charcoal); }
-  .back .divider { grid-column: 1 / -1; align-self: end; border-top: 0.2mm solid #d9dde2; padding-top: 2.4mm; display: flex; align-items: center; justify-content: space-between; }
+  .back .divider { grid-column: 1 / -1; align-self: end; border-top: 0.2mm solid #d9dde2; padding-top: 2.4mm; display: flex; align-items: flex-end; justify-content: space-between; }
   .back .divider > span { font: 600 4.6pt/1 var(--font-heading); letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
-  .back .stub-mark { position: absolute; right: 7mm; top: 50%; transform: translateY(-50%); width: 14mm; height: 14mm; border-radius: 0.8mm; display: block; }
-  .back .stub-label { position: absolute; right: 7mm; bottom: 7mm; width: 14mm; text-align: center; font: 600 4.6pt/1.3 var(--font-heading); letter-spacing: .16em; text-transform: uppercase; color: var(--navy); }
+  .back .divider .logo-sm { width: 24mm; height: auto; display: block; }
+  .back .stub-text { position: absolute; right: 7mm; top: 7mm; bottom: 7mm; width: 15mm; display: flex; flex-direction: column; justify-content: space-between; color: var(--navy); }
+  .back .stub-text svg { width: 6mm; height: 6mm; }
+  .back .stub-label { font: 600 4.8pt/1.55 var(--font-heading); letter-spacing: .16em; text-transform: uppercase; color: var(--navy); }
 </style>
 </head>
 <body>
@@ -74,13 +76,15 @@
     <div class="field"><span class="k">Base</span><span class="v body">Negombo, Sri Lanka</span></div>
     <div class="divider">
       <div class="field"><span class="k">Phone &amp; WhatsApp</span><span class="v">+94 74 363 8418</span></div>
-      <span>R.K Travels</span>
+      <img class="logo-sm" src="../shared/rk-travels-logo-full-colour.png" alt="R.K Travels">
     </div>
   </div>
   <div class="stub"></div>
   <div class="perf"></div><div class="notch top"></div><div class="notch bottom"></div>
-  <img class="stub-mark" src="../shared/rk-travels-favicon.png" alt="">
-  <p class="stub-label">Transfers<br>Rentals<br>Tours</p>
+  <div class="stub-text">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+    <p class="stub-label">Transfers<br>Rentals<br>Tours</p>
+  </div>
   <div class="guide trim"></div><div class="guide safe"></div>
 </section>
 <script>

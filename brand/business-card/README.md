@@ -37,3 +37,4 @@ Re-export: `node brand/business-card/render.mjs card-v2`.
 - The notches are drawn on the trim line, so after cutting they show as half-circles. Ask the printer whether they can die-cut real notches; otherwise they print as part of the artwork.
 
 Re-export: `node brand/business-card/render.mjs card-v3`.
+- Update: the back now uses the full-colour logo (beside the phone number) instead of the RK mark; the stub shows a plane icon and the service list.
