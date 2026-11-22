@@ -22,3 +22,10 @@ Re-export: `npm i -D playwright && npx playwright install chromium`, then `node 
 
 ## Remaining prepress step
 The PDFs are RGB with no crop marks, because the build environment cannot produce a reliable CMYK conversion. Before printing, the printer (or a designer in Acrobat / Illustrator) should convert to their CMYK profile (e.g. FOGRA39 or the printer's own), add crop marks, and proof the navy (#06274D) and yellow (#FFC107), which shift in CMYK. The logo is a raster PNG; at this size it prints at well above 300 ppi.
+
+## Version 2 — editorial
+`card-v2.html`, exports prefixed `rk-travels-card-v2-…` (same trim, bleed and safe area).
+- **Front:** logo top left, the approved line "Your Journey, Our Priority." in Instrument Serif with a yellow rule, and a navy road strip with a dashed centre line and a yellow sun running off the right edge.
+- **Back:** warm white; "Shri" large in Instrument Serif, "FOUNDER" eyebrow, then phone/WhatsApp and Negombo beside a small full-colour logo, with a thin navy edge.
+
+Re-export: `node brand/business-card/render.mjs card-v2`.

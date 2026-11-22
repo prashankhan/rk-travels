@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>R.K Travels — business card, version 2 (Shri, Founder)</title>
+<!--
+  EDITABLE SOURCE — version 2 ("editorial").
+  Trim 90 × 50 mm, bleed 3 mm each side (artboard 96 × 56 mm), safe area 4 mm inside trim.
+  Open with ?side=front or ?side=back (&guides=1 shows trim and safe lines).
+  Re-export with: node brand/business-card/render.mjs card-v2
+  Edit text only. Do not alter the logo.
+-->
+<link rel="stylesheet" href="../shared/brand.css">
+<style>
+  @page { size: 96mm 56mm; margin: 0; }
+  html, body { width: 96mm; height: 56mm; background: var(--white); }
+  .art { position: relative; width: 96mm; height: 56mm; overflow: hidden; }
+  .guide { position: absolute; pointer-events: none; display: none; }
+  .show-guides .guide { display: block; }
+  .trim { left: 3mm; top: 3mm; width: 90mm; height: 50mm; outline: 0.1mm solid #e0007a; }
+  .safe { left: 7mm; top: 7mm; width: 82mm; height: 42mm; outline: 0.1mm dashed #00a3e0; }
+
+  /* FRONT — editorial: logo top-left, approved headline bottom-left, road-line motif */
+  .front { background: var(--white); }
+  .front .logo { position: absolute; left: 7mm; top: 7.5mm; width: 37mm; height: auto; display: block; }
+  .front .headline { position: absolute; left: 7mm; bottom: 9.5mm; font: 400 15pt/1.02 var(--font-display); color: var(--navy); letter-spacing: -0.005em; }
+  .front .headline em { font-style: italic; }
+  .front .rule { position: absolute; left: 7mm; bottom: 7mm; width: 10mm; height: 0.6mm; background: var(--golden-yellow); }
+  /* Road centre-line: dashes running off the right edge into the bleed */
+  .front .road { position: absolute; right: 0; top: 0; bottom: 0; width: 23mm; background: var(--navy); }
+  .front .road i { position: absolute; left: 50%; width: 0.9mm; height: 4.2mm; margin-left: -0.45mm; background: var(--white); border-radius: 0.2mm; }
+  .front .road i.y { background: var(--golden-yellow); }
+  .front .sun { position: absolute; right: calc(23mm - 4.5mm); top: 8mm; width: 9mm; height: 9mm; border-radius: 50%; background: var(--golden-yellow); }
+
+  /* BACK — warm white, serif name, contact column */
+  .back { background: var(--warm-white); }
+  .back .name { position: absolute; left: 7mm; top: 7.5mm; font: 400 24pt/0.95 var(--font-display); color: var(--navy); }
+  .back .title { position: absolute; left: 7.4mm; top: 19mm; display: flex; align-items: center; gap: 2mm; font: 600 5.8pt/1 var(--font-heading); letter-spacing: 0.18em; text-transform: uppercase; color: var(--charcoal); }
+  .back .title::before { content: ""; width: 5mm; height: 0.5mm; background: var(--golden-yellow); }
+  .back .contact { position: absolute; left: 7mm; right: 7mm; bottom: 7mm; display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 3mm; border-top: 0.2mm solid #d9dde2; padding-top: 3mm; }
+  .back ul { list-style: none; display: flex; flex-direction: column; gap: 1.6mm; }
+  .back li { display: flex; align-items: center; gap: 2mm; font: 500 7pt/1.1 var(--font-body); color: var(--charcoal); }
+  .back li strong { font: 600 8pt/1 var(--font-heading); color: var(--navy); letter-spacing: 0.01em; }
+  .back li small { font: 500 5.6pt/1 var(--font-body); color: var(--muted); }
+  .back li svg { width: 3mm; height: 3mm; flex: none; color: var(--navy); }
+  .back .logo-sm { width: 22mm; height: auto; display: block; }
+  .back .edge { position: absolute; left: 0; right: 0; bottom: 0; height: 3.8mm; background: var(--navy); } /* 0.8 mm visible */
+</style>
+</head>
+<body>
+<section class="art front" id="front">
+  <img class="logo" src="../shared/rk-travels-logo-full-colour.png" alt="R.K Travels">
+  <p class="headline">Your Journey,<br><em>Our Priority.</em></p>
+  <div class="rule"></div>
+  <div class="road" aria-hidden="true">
+    <i style="top: 1mm"></i><i style="top: 9mm"></i><i style="top: 17mm"></i><i class="y" style="top: 25mm"></i><i style="top: 33mm"></i><i style="top: 41mm"></i><i style="top: 49mm"></i>
+  </div>
+  <div class="sun" aria-hidden="true"></div>
+  <div class="guide trim"></div><div class="guide safe"></div>
+</section>
+
+<section class="art back" id="back">
+  <p class="name">Shri</p>
+  <p class="title">Founder</p>
+  <div class="contact">
+    <ul>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><strong>+94 74 363 8418</strong><small>Phone &amp; WhatsApp</small></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Negombo, Sri Lanka</li>
+    </ul>
+    <img class="logo-sm" src="../shared/rk-travels-logo-full-colour.png" alt="R.K Travels">
+  </div>
+  <div class="edge"></div>
+  <div class="guide trim"></div><div class="guide safe"></div>
+</section>
+<script>
+  const q = new URLSearchParams(location.search);
+  if (q.get("guides") === "1") document.body.classList.add("show-guides");
+  const side = q.get("side");
+  if (side) document.querySelectorAll(".art").forEach((el) => { if (el.id !== side) el.remove(); });
+</script>
+</body>
+</html>
