@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>R.K Travels — business card, version 3 (Shri, Founder)</title>
+<!--
+  EDITABLE SOURCE — version 3 ("travel ticket").
+  Trim 90 × 50 mm, bleed 3 mm each side (artboard 96 × 56 mm), safe area 4 mm inside trim.
+  Open with ?side=front or ?side=back (&guides=1 shows trim and safe lines).
+  Re-export with: node brand/business-card/render.mjs card-v3
+  Edit text only. Do not alter the logo.
+-->
+<link rel="stylesheet" href="../shared/brand.css">
+<style>
+  @page { size: 96mm 56mm; margin: 0; }
+  html, body { width: 96mm; height: 56mm; background: var(--white); }
+  .art { position: relative; width: 96mm; height: 56mm; overflow: hidden; background: var(--white); }
+  .guide { position: absolute; pointer-events: none; display: none; }
+  .show-guides .guide { display: block; }
+  .trim { left: 3mm; top: 3mm; width: 90mm; height: 50mm; outline: 0.1mm solid #e0007a; }
+  .safe { left: 7mm; top: 7mm; width: 82mm; height: 42mm; outline: 0.1mm dashed #00a3e0; }
+
+  /* Shared ticket stub: yellow panel on the right, divided by a perforation line */
+  .stub { position: absolute; top: 0; right: 0; bottom: 0; width: 25mm; background: var(--golden-yellow); }
+  .perf { position: absolute; top: 0; bottom: 0; right: 25mm; width: 0; border-left: 0.35mm dashed var(--navy); opacity: .55; }
+  .notch { position: absolute; right: calc(25mm - 2.2mm); width: 4.4mm; height: 4.4mm; border-radius: 50%; background: var(--white); }
+  .notch.top { top: calc(3mm - 2.2mm); }
+  .notch.bottom { bottom: calc(3mm - 2.2mm); }
+  .back .notch { background: var(--warm-white); }
+
+  /* FRONT */
+  .front .logo { position: absolute; left: 8mm; top: 50%; transform: translateY(-50%); width: 48mm; height: auto; display: block; }
+  .front .stub-text { position: absolute; right: 7mm; top: 7mm; bottom: 7mm; width: 15mm; display: flex; flex-direction: column; justify-content: space-between; color: var(--navy); }
+  .front .label { font: 600 4.6pt/1 var(--font-heading); letter-spacing: .18em; text-transform: uppercase; opacity: .75; }
+  .front .code { margin-top: 1mm; font: 700 7.2pt/1 var(--font-heading); letter-spacing: -.01em; }
+  .front .place { font: 400 italic 8pt/1.1 var(--font-display); }
+  .front .plane { width: 6mm; height: 6mm; color: var(--navy); }
+
+  /* BACK */
+  .back { background: var(--warm-white); }
+  .back .fields { position: absolute; left: 7mm; top: 7mm; right: 32mm; bottom: 7mm; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto 1fr; gap: 3.2mm 4mm; }
+  .back .field { display: flex; flex-direction: column; gap: 1mm; }
+  .back .field.wide { grid-column: 1 / -1; }
+  .back .k { font: 600 4.6pt/1 var(--font-heading); letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+  .back .name { font: 400 22pt/0.9 var(--font-display); color: var(--navy); }
+  .back .v { font: 600 7.6pt/1.15 var(--font-heading); color: var(--navy); }
+  .back .v.body { font: 500 7pt/1.2 var(--font-body); color: var(--charcoal); }
+  .back .divider { grid-column: 1 / -1; align-self: end; border-top: 0.2mm solid #d9dde2; padding-top: 2.4mm; display: flex; align-items: center; justify-content: space-between; }
+  .back .divider > span { font: 600 4.6pt/1 var(--font-heading); letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+  .back .stub-mark { position: absolute; right: 7mm; top: 50%; transform: translateY(-50%); width: 14mm; height: 14mm; border-radius: 0.8mm; display: block; }
+  .back .stub-label { position: absolute; right: 7mm; bottom: 7mm; width: 14mm; text-align: center; font: 600 4.6pt/1.3 var(--font-heading); letter-spacing: .16em; text-transform: uppercase; color: var(--navy); }
+</style>
+</head>
+<body>
+<section class="art front" id="front">
+  <img class="logo" src="../shared/rk-travels-logo-full-colour.png" alt="R.K Travels">
+  <div class="stub"></div>
+  <div class="perf"></div><div class="notch top"></div><div class="notch bottom"></div>
+  <div class="stub-text">
+    <svg class="plane" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+    <div>
+      <p class="label">From</p>
+      <p class="code">Negombo</p>
+      <p class="place">Sri Lanka</p>
+    </div>
+  </div>
+  <div class="guide trim"></div><div class="guide safe"></div>
+</section>
+
+<section class="art back" id="back">
+  <div class="fields">
+    <div class="field wide"><span class="k">Name</span><span class="name">Shri</span></div>
+    <div class="field"><span class="k">Role</span><span class="v">Founder</span></div>
+    <div class="field"><span class="k">Base</span><span class="v body">Negombo, Sri Lanka</span></div>
+    <div class="divider">
+      <div class="field"><span class="k">Phone &amp; WhatsApp</span><span class="v">+94 74 363 8418</span></div>
+      <span>R.K Travels</span>
+    </div>
+  </div>
+  <div class="stub"></div>
+  <div class="perf"></div><div class="notch top"></div><div class="notch bottom"></div>
+  <img class="stub-mark" src="../shared/rk-travels-favicon.png" alt="">
+  <p class="stub-label">Transfers<br>Rentals<br>Tours</p>
+  <div class="guide trim"></div><div class="guide safe"></div>
+</section>
+<script>
+  const q = new URLSearchParams(location.search);
+  if (q.get("guides") === "1") document.body.classList.add("show-guides");
+  const side = q.get("side");
+  if (side) document.querySelectorAll(".art").forEach((el) => { if (el.id !== side) el.remove(); });
+</script>
+</body>
+</html>

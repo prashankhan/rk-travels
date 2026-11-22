@@ -29,3 +29,11 @@ The PDFs are RGB with no crop marks, because the build environment cannot produc
 - **Back:** warm white; "Shri" large in Instrument Serif, "FOUNDER" eyebrow, then phone/WhatsApp and Negombo beside a small full-colour logo, with a thin navy edge.
 
 Re-export: `node brand/business-card/render.mjs card-v2`.
+
+## Version 3 — travel ticket
+`card-v3.html`, exports prefixed `rk-travels-card-v3-…` (same trim, bleed and safe area).
+- **Front:** the full-colour logo on white, with a golden-yellow ticket stub on the right behind a perforation line and half-circle notches. The stub carries a plane icon and "From Negombo, Sri Lanka".
+- **Back:** warm white, laid out like ticket fields: Name (Shri), Role (Founder), Base (Negombo, Sri Lanka), Phone & WhatsApp (+94 74 363 8418). The yellow stub holds the RK mark and "Transfers · Rentals · Tours".
+- The notches are drawn on the trim line, so after cutting they show as half-circles. Ask the printer whether they can die-cut real notches; otherwise they print as part of the artwork.
+
+Re-export: `node brand/business-card/render.mjs card-v3`.
